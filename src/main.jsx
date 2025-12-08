@@ -5,8 +5,9 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // paginas
-import Home from "./routes/Home.jsx";
-import NewPost from "./routes/NewPost.jsx";
+import Login from "./routes/login/Login.jsx";
+import Me from "./routes/me/Me.jsx";
+import Clientes from "./routes/clientes/Clientes.jsx";
 
 // Criando rotas
 const router = createBrowserRouter([
@@ -15,16 +16,16 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true,
-        element: <Home />,
+        path: "login",
+        element: <Login />,
       },
       {
-        path: "home",
-        element: <Home />,
+        path: "me",
+        element: <Me />,
       },
       {
-        path: "new",
-        element: <NewPost />,
+        path: "clientes",
+        element: <Clientes />,
       },
     ],
   },

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const createBlog = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+const baseRequest = axios.create({
+  baseURL: "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-export default createBlog;
+export default baseRequest;
