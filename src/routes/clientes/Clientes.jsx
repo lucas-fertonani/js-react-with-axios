@@ -41,6 +41,10 @@ const Clientes = () => {
     navigate("/clientes/criar");
   };
 
+  const irParaMe = () => {
+    navigate("/me");
+  };
+
   const deletarCliente = async (clienteId) => {
     const token = localStorage.getItem("token");
 
@@ -86,25 +90,36 @@ const Clientes = () => {
 
   if (loginStatus === true) {
     return (
-      <>
-        <h1>clientes:</h1>
+      <div className="criarClientes">
+        <h1>Clientes:</h1>
         <ul>
           {clientes?.map((cliente) => (
             <li key={cliente.id} className="items">
-              <p>ID: {cliente.id}</p>
-              <p>Nome: {cliente.name}</p>
-              <p>Telefone: {cliente.phone}</p>
+              <p>ID: {cliente.id} /</p>
+              <p>Nome: {cliente.name} /</p>
+              <p> Telefone: {cliente.phone} /</p>
               <p>
                 Data de Nascimento:{" "}
                 {new Date(cliente.birthdate).toLocaleDateString()}
               </p>
-              <button onClick={() => editarCliente(cliente.id)}>&</button>
-              <button onClick={() => deletarCliente(cliente.id)}>X</button>
+              <button
+                className="btn-edit"
+                onClick={() => editarCliente(cliente.id)}
+              >
+                &
+              </button>
+              <button
+                className="btn-delete"
+                onClick={() => deletarCliente(cliente.id)}
+              >
+                X
+              </button>
             </li>
           ))}
         </ul>
         <button onClick={criarCliente}>Criar Cliente</button>
-      </>
+        <button onClick={irParaMe}>Me</button>
+      </div>
     );
   }
   return null;

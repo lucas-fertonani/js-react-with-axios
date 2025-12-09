@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import baseRequest from "../../axios/config";
 import { useNavigate, useParams } from "react-router-dom";
 
+import "./EditarClientes.css";
+
 const EditarCliente = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -76,6 +78,7 @@ const EditarCliente = () => {
           value={formData.name}
           onChange={handleChange}
           placeholder="Nome Cliente"
+          style={{ width: "300px", height: "25px" }}
         />
       </div>
 
@@ -89,6 +92,7 @@ const EditarCliente = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
           placeholder="119393234"
+          style={{ width: "300px", height: "25px" }}
         />
       </div>
 
@@ -100,10 +104,17 @@ const EditarCliente = () => {
           name="birthDate"
           value={formData.birthDate}
           onChange={handleChange}
+          style={{ width: "300px", height: "25px" }}
         />
       </div>
 
-      <button onClick={handleSubmit}>Editar</button>
+      <button
+        className="btn-edit_2"
+        onClick={handleSubmit}
+        style={{ width: "300px", height: "25px" }}
+      >
+        Editar
+      </button>
       <p>{errorHandling}</p>
     </div>
   );

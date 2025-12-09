@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import baseRequest from "../../axios/config";
 
+import "./Me.css";
+
 const Me = () => {
   const [loginStatus, setLoginStatus] = useState();
   const [meData, setMeData] = useState();
@@ -29,6 +31,11 @@ const Me = () => {
     })(); // Immediately invoke the async function
   }, []);
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   const irClientes = () => {
     navigate("/clientes");
   };
@@ -41,13 +48,22 @@ const Me = () => {
 
   if (loginStatus === true) {
     return (
-      <div>
-        Mostrando as informações do usuário:
-        <p>Id: {meData.id}</p>
-        <p>Name: {meData.name}</p>
-        <p>Age: {meData.age}</p>
-        <p>Username: {meData.username}</p>
+      <div className="information_user">
+        <h1>Mostrando as informações do usuário:</h1>
+        <h4>
+          <p>Id: {meData.id}</p>
+        </h4>
+        <h4>
+          <p>Name: {meData.name}</p>
+        </h4>
+        <h4>
+          <p>Age: {meData.age}</p>
+        </h4>
+        <h4>
+          <p>Username: {meData.username}</p>
+        </h4>
         <button onClick={irClientes}>Clientes</button>
+        <button onClick={logout}>logout</button>
       </div>
     );
   }

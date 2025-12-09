@@ -1,0 +1,19 @@
+.login {
+    text-align: center;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
+
+.password {
+    margin-bottom: 10px;
+}
+
+.usuario {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: purple
+}
