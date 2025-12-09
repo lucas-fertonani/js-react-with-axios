@@ -8,6 +8,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./routes/login/Login.jsx";
 import Me from "./routes/me/Me.jsx";
 import Clientes from "./routes/clientes/Clientes.jsx";
+import CriarClientes from "./routes/clientes/CriarClientes.jsx";
+import EditarClientes from "./routes/clientes/EditarClientes.jsx";
 
 // Criando rotas
 const router = createBrowserRouter([
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
       {
         path: "clientes",
         element: <Clientes />,
+      },
+      {
+        path: "clientes/criar",
+        element: <CriarClientes />,
+      },
+      {
+        path: "clientes/editar/:id",
+        element: <EditarClientes />,
       },
     ],
   },

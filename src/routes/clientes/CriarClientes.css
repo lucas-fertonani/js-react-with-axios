@@ -1,0 +1,9 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelContainer {
+    display: flex;
+    flex-direction: column;
+}
